@@ -6,8 +6,15 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "nounRule",
-      ruleIsValid: true,
+      parsedRule: {
+        valid: true,
+        ruleType: "nounRule",
+        noun: {
+          nounType: "nthWord",
+          wordCount: 2
+        }
+      },
+      parsedNoun: { nounType: "nthWord", numberString: "second", wordCount: 2 },
       tokenCount: 13,
       tokens: [
         "Some",
@@ -23,7 +30,11 @@ const testData = {
         "can",
         "be",
         "anything"
-      ]
+      ],
+      result: {
+        value: "string",
+        success: true
+      }
     }
   },
   t2: {
@@ -32,7 +43,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t3: {
     input: {
@@ -41,8 +55,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "email",
@@ -58,8 +71,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -75,8 +87,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -92,8 +103,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "date",
@@ -109,8 +119,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "dollars",
@@ -126,8 +135,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -143,8 +151,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -159,7 +166,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "nounRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: false, ruleType: "" },
+      tokenCount: 13
+    }
   },
   t10: {
     input: {
@@ -168,8 +178,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "word",
@@ -185,8 +194,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -202,8 +210,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "string",
@@ -219,8 +226,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: '"phone"',
@@ -235,7 +241,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "nounRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: false, ruleType: "" },
+      tokenCount: 13
+    }
   },
   t15: {
     input: {
@@ -243,7 +252,11 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "nounRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "nounRule" },
+      parsedNoun: { nounType: "nWords", numberString: "3", wordCount: 3 },
+      tokenCount: 13
+    }
   },
   t16: {
     input: {
@@ -252,8 +265,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "3 words",
@@ -269,8 +281,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "dollars",
@@ -285,7 +296,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t19: {
     input: {
@@ -294,8 +308,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "10th word",
@@ -311,8 +324,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "second through 4th word",
@@ -328,8 +340,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "word",
@@ -345,8 +356,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "word",
@@ -362,8 +372,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "word",
@@ -379,8 +388,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "2nd word",
@@ -396,8 +404,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "3rd email",
@@ -412,7 +419,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t27: {
     input: {
@@ -420,7 +430,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t28: {
     input: {
@@ -428,7 +441,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t29: {
     input: {
@@ -436,7 +452,10 @@ const testData = {
       text:
         "Some random string that will change over every request and can be anything"
     },
-    expected: { ruleType: "rangeRule", ruleIsValid: true, tokenCount: 13 }
+    expected: {
+      parsedRule: { valid: true, ruleType: "rangeRule" },
+      tokenCount: 13
+    }
   },
   t30: {
     input: {
@@ -445,8 +464,7 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "💸",
@@ -462,14 +480,24 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      ruleType: "prepositionRule",
-      ruleIsValid: true,
+      parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
         captureNoun: "💲",
         preposition: "following",
         anchorNoun: "email"
       }
+    }
+  },
+  t32: {
+    input: {
+      rule: 10,
+      text:
+        "Some random string that will change over every request and can be anything"
+    },
+    expected: {
+      parsedRule: { valid: false, ruleType: "" },
+      tokenCount: 13
     }
   }
 };

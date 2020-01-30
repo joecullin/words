@@ -4,7 +4,7 @@ const parsePrepositionRule = require("../../src/ruleParser/parsePrepositionRule"
 describe("ruleParser: parsePrepositionRule", () => {
   Object.keys(testData).forEach(testId => {
     const testCase = testData[testId];
-    if (testCase.expected.ruleType === "prepositionRule") {
+    if (testCase.expected.parsedRule.ruleType === "prepositionRule") {
       test(`parsePrepositionRule: ${testId}: ${testCase.input.rule}`, () => {
         const result = parsePrepositionRule(testCase.input.rule);
 

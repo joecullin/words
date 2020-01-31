@@ -1,9 +1,20 @@
 const express = require("express");
-const app = express();
-const port = 3088;
+const words = require("./routes/words");
 
-app.get("/words", (req, res) => {
-  res.json({ sessionId: 10 });
+const port = process.env.WORDS_PORT ? process.env.WORDS_PORT : 3000;
+
+const app = express();
+app.use(express.json())
+
+app.post("/words", (req, res) => {
+  const body = req.body;
+
+  const result = words({
+    rule: body.rule,
+    text: body.text
+  });
+
+  res.json(result);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

@@ -19,7 +19,9 @@
   "homepage": "https://github.com/joecullin/words#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "isemail": "^3.2.0",
     "jest": "^25.1.0",
+    "moment": "^2.24.0",
     "nodemon": "^2.0.2",
     "words-to-numbers": "^1.5.1"
   },

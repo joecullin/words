@@ -1,12 +1,15 @@
 const { prepositionWords } = require("./parserDefinitions");
+const parseNounRule = require("./parseNounRule");
 
 const parsePrepositionRule = ruleString => {
   // console.debug("parsePrepositionRule", ruleString);
 
   let parsed = {
-    captureNoun: "",
+    captureNounString: "",
+    captureNoun: {},
     preposition: "",
-    anchorNoun: ""
+    anchorNounString: "",
+    anchorNoun: {}
   };
 
   // Find the earliest preposition.
@@ -21,12 +24,15 @@ const parsePrepositionRule = ruleString => {
   // console.debug("prepositionPositions", prepositionPositions);
 
   const prepositionIndex = prepositionPositions[0].index;
-  parsed.captureNoun = ruleString.substring(0, prepositionIndex - 1);
-  parsed.anchorNoun = ruleString.substring(
+  parsed.captureNounString = ruleString.substring(0, prepositionIndex - 1);
+  parsed.anchorNounString = ruleString.substring(
     prepositionIndex + parsed.preposition.length + 1
   );
 
-  // console.debug("parsed", parsed);
+  parsed.captureNoun = parseNounRule(parsed.captureNounString);
+  parsed.anchorNoun = parseNounRule(parsed.anchorNounString);
+
+  console.debug("parsed preposition", parsed);
   return parsed;
 };
 

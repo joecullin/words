@@ -1,6 +1,6 @@
 const rangeWords = ["through"];
 const prepositionWords = ["preceding", "following"];
-const nounWords = ["string", "email", "dollars"];
+const nounWords = ["string", "email", "dollars", "date"];
 const nounPatterns = [
   /^string$/,
   /^email$/,

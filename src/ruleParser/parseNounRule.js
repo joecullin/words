@@ -8,7 +8,8 @@ const parseNounRule = ruleString => {
     nounType: "",
     wordCount: 0,
     numberString: "",
-    phrase: ""
+    phrase: "",
+    tokens: ""
   };
 
   if (nounWords.includes(ruleString)) {
@@ -17,6 +18,7 @@ const parseNounRule = ruleString => {
   } else if (/^["].*?["]$/.test(ruleString) || /^['].*?[']$/.test(ruleString)) {
     parsed.nounType = "quotedPhrase";
     parsed.phrase = ruleString.substring(0, ruleString.length - 1).substring(1);
+    parsed.tokens = parsed.phrase.split(" ");
   } else if (
     ruleString === "word" ||
     ruleString === "one word" ||

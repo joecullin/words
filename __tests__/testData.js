@@ -58,9 +58,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "email",
+        captureNounString: "email",
         preposition: "following",
-        anchorNoun: "3 words"
+        anchorNounString: "3 words"
       }
     }
   },
@@ -74,9 +74,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "preceding",
-        anchorNoun: '"phone"'
+        anchorNounString: '"phone"'
       }
     }
   },
@@ -90,9 +90,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "preceding",
-        anchorNoun: "'phone'"
+        anchorNounString: "'phone'"
       }
     }
   },
@@ -106,9 +106,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "date",
+        captureNounString: "date",
         preposition: "preceding",
-        anchorNoun: '"Phone"'
+        anchorNounString: '"Phone"'
       }
     }
   },
@@ -122,9 +122,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "dollars",
+        captureNounString: "dollars",
         preposition: "following",
-        anchorNoun: "3 words"
+        anchorNounString: "3 words"
       }
     }
   },
@@ -138,9 +138,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "preceding",
-        anchorNoun: '"following"'
+        anchorNounString: '"following"'
       }
     }
   },
@@ -154,9 +154,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "following",
-        anchorNoun: '"preceding"'
+        anchorNounString: '"preceding"'
       }
     }
   },
@@ -181,9 +181,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "word",
+        captureNounString: "word",
         preposition: "following",
-        anchorNoun: "email"
+        anchorNounString: "email"
       }
     }
   },
@@ -197,9 +197,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "preceding",
-        anchorNoun: '"preceding"'
+        anchorNounString: '"preceding"'
       }
     }
   },
@@ -213,9 +213,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "string",
+        captureNounString: "string",
         preposition: "preceding",
-        anchorNoun: '"preceding word"'
+        anchorNounString: '"preceding word"'
       }
     }
   },
@@ -229,9 +229,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: '"phone"',
+        captureNounString: '"phone"',
         preposition: "preceding",
-        anchorNoun: "string"
+        anchorNounString: "string"
       }
     }
   },
@@ -268,9 +268,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "3 words",
+        captureNounString: "3 words",
         preposition: "following",
-        anchorNoun: "email"
+        anchorNounString: "email"
       }
     }
   },
@@ -284,9 +284,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "dollars",
+        captureNounString: "dollars",
         preposition: "following",
-        anchorNoun: "3rd word"
+        anchorNounString: "3rd word"
       }
     }
   },
@@ -311,9 +311,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "10th word",
+        captureNounString: "10th word",
         preposition: "following",
-        anchorNoun: "email"
+        anchorNounString: "email"
       }
     }
   },
@@ -327,9 +327,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "second through 4th word",
+        captureNounString: "second through 4th word",
         preposition: "following",
-        anchorNoun: '"phone number"'
+        anchorNounString: '"phone number"'
       }
     }
   },
@@ -343,9 +343,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "word",
+        captureNounString: "word",
         preposition: "preceding",
-        anchorNoun: `"my ol' phone"`
+        anchorNounString: `"my ol' phone"`
       }
     }
   },
@@ -359,9 +359,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "word",
+        captureNounString: "word",
         preposition: "preceding",
-        anchorNoun: '"my old" phone"'
+        anchorNounString: '"my old" phone"'
       }
     }
   },
@@ -375,9 +375,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "word",
+        captureNounString: "word",
         preposition: "preceding",
-        anchorNoun: '"my old" phone"'
+        anchorNounString: '"my old" phone"'
       }
     }
   },
@@ -391,9 +391,9 @@ const testData = {
       parsedRule: { valid: true, ruleType: "prepositionRule" },
       tokenCount: 13,
       parsedPreposition: {
-        captureNoun: "2nd word",
+        captureNounString: "2nd word",
         preposition: "following",
-        anchorNoun: `"Alexis' 'work' phone"`
+        anchorNounString: `"Alexis' 'work' phone"`
       }
     }
   },
@@ -404,13 +404,8 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      parsedRule: { valid: true, ruleType: "prepositionRule" },
+      parsedRule: { valid: false, ruleType: "" },
       tokenCount: 13,
-      parsedPreposition: {
-        captureNoun: "3rd email",
-        preposition: "following",
-        anchorNoun: "5th word"
-      }
     }
   },
   t26: {
@@ -464,13 +459,8 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      parsedRule: { valid: true, ruleType: "prepositionRule" },
+      parsedRule: { valid: false, ruleType: "" },
       tokenCount: 13,
-      parsedPreposition: {
-        captureNoun: "💸",
-        preposition: "following",
-        anchorNoun: "3 words"
-      }
     }
   },
   t31: {
@@ -480,13 +470,8 @@ const testData = {
         "Some random string that will change over every request and can be anything"
     },
     expected: {
-      parsedRule: { valid: true, ruleType: "prepositionRule" },
+      parsedRule: { valid: false, ruleType: "" },
       tokenCount: 13,
-      parsedPreposition: {
-        captureNoun: "💲",
-        preposition: "following",
-        anchorNoun: "email"
-      }
     }
   },
   t32: {

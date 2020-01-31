@@ -738,6 +738,5 @@ const processorTestData = {
     }
   }
 };
-const processorTestData2 = {};
 
 module.exports = processorTestData;

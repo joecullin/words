@@ -1,6 +1,7 @@
 const determineRuleType = require("./determineRuleType");
 const parsePrepositionRule = require("./parsePrepositionRule");
 const parseNounRule = require("./parseNounRule");
+const parseRangeRule = require("./parseRangeRule");
 
 const parseRule = ruleString => {
   console.debug("parseRule", ruleString);
@@ -17,6 +18,8 @@ const parseRule = ruleString => {
       parsed.noun = parseNounRule(ruleString);
     } else if (parsed.ruleType === "prepositionRule") {
       parsed.preposition = parsePrepositionRule(ruleString);
+    } else if (parsed.ruleType === "rangeRule") {
+      parsed.range = parseRangeRule(ruleString);
     }
 
     parsed.valid = true;

@@ -67,4 +67,15 @@ const e2eTestData = {
   }
 };
 
+const e2eTestData2 = {
+  t4: {
+    input: {
+      rule: "second through 4th word",
+      text:
+        "Some random string that will change over every joe@joecullin.com ok?"
+    },
+    expected: { value: "random string that", success: true }
+  }
+};
+
 module.exports = e2eTestData;

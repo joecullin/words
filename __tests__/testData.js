@@ -45,7 +45,12 @@ const testData = {
     },
     expected: {
       parsedRule: { valid: true, ruleType: "rangeRule" },
-      tokenCount: 13
+      parsedRange: { startIndex: 2, endIndex: 4 },
+      tokenCount: 13,
+      result: {
+        value: "random string that",
+        success: true
+      }
     }
   },
   t3: {
@@ -405,7 +410,7 @@ const testData = {
     },
     expected: {
       parsedRule: { valid: false, ruleType: "" },
-      tokenCount: 13,
+      tokenCount: 13
     }
   },
   t26: {
@@ -438,7 +443,12 @@ const testData = {
     },
     expected: {
       parsedRule: { valid: true, ruleType: "rangeRule" },
-      tokenCount: 13
+      parsedRange: { startIndex: 100, endIndex: 102 },
+      tokenCount: 13,
+      result: {
+        value: "random string that",
+        success: true
+      }
     }
   },
   t29: {
@@ -460,7 +470,7 @@ const testData = {
     },
     expected: {
       parsedRule: { valid: false, ruleType: "" },
-      tokenCount: 13,
+      tokenCount: 13
     }
   },
   t31: {
@@ -471,7 +481,7 @@ const testData = {
     },
     expected: {
       parsedRule: { valid: false, ruleType: "" },
-      tokenCount: 13,
+      tokenCount: 13
     }
   },
   t32: {

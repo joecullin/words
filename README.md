@@ -59,7 +59,14 @@ Preposition rules have 3 parts: `<captureNoun><preposition><anchorNoun>`
 - preposition, either "following" or "preceding"
 - anchorNoun - the relative point described by the preposition.
 
-Example:
+Misc notes on rules:
+- Range rules only apply to words. You can't get e.g. _2nd through 100th email_.
+- Range rules only work left to right (low to high).
+- Combinations like _second through 4th word following "phone number"_ are not supported.
+- All rules and processing  are case-sensitive.
+- Words are split on spaces. Punctuation is not ignored. So the last word of a sentence gets a period attached to it.
+
+Example preposition rule:
 - rule: _word preceding "my ol' phone"_
 - text: _I really banged up my ol' phone when I fell._
 - --> anchor is the quotedPhrase _my  ol' phone_
